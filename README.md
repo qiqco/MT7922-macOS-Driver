@@ -45,37 +45,6 @@
 - [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（所有 target 都需要）
 - 蓝牙额外需要 `Lilu.kext` + `BlueToolFixup.kext`
 
-
-### 日志开关
-
-在对应 `Info.plist` 的 `IOKitPersonalities` 中修改 Boolean 值，重新编译并替换 kext：
-
-| 驱动 | Info.plist 路径 | 键 | 默认 |
-|---|---|---|---|
-| MT7922 | `Source/MT7922/Info.plist` | `MT7922LogEnabled` | `false` |
-| MT7922Native | `Source/MT7922/NativeWiFi/Info.plist` | `MT7922LogEnabled` | `false` |
-| MT7922Bluetooth | `Source/Bluetooth/Info.plist` | `MT7922BluetoothLogEnabled` | `true` |
-
-## 许可证 / License
-
-本项目为**多许可证混合**，各组成部分许可证以其源文件头或对应 LICENSE 文件为准：
-
-| 组成部分 | 许可证 | 说明 |
-|---|---|---|
-| 项目新增适配代码（`Source/MT7922` 多数文件、`Source/Bluetooth/Protocol` 等） | `ISC` | 项目独立实现 |
-| `Source/Bluetooth/USB` | `GPL-2.0-only` | USB 服务实现 |
-| `Source/Bluetooth/CompatLibrary` | `BSD-3-Clause` | 复用自 acidanthera/Lilu |
-| `Source/Bluetooth/CompatLibrary/Decoder` | 专用 BSD 风格 | Hacker Disassembler Engine（HDE） |
-| `Source/Bluetooth/Attribution/BlueToolFixup` 参考 | `GPL-2.0-only` | 原始参考来自 BrcmPatchRAM |
-| `Source/mt76`、`Source/linux` | `BSD-3-Clause-Clear` / 文件头所示 | 参考/派生自 Linux mt76 |
-| `Source/Bluetooth/Vendor/MacKernelSDK` | `Apple Public Source License 2.0` | Apple 内核 SDK |
-| `Source/firmware/*.bin` | MediaTek 专有许可 | 见 `Source/mt76/firmware/LICENSE.mediatek` |
-| `Source/MT7922/NativeWiFi/vendor/` | APSL / Apple 专有 | Apple 802.11 私有头参考 |
-
-完整归属声明见 [`Source/Bluetooth/THIRD_PARTY.md`](Source/Bluetooth/THIRD_PARTY.md)。
-
-**上传前请自行核对**：`Source/mt76` 与上游 Linux `mt76` 的 SPDX 声明是否一致；如果你从上游拉取了新的修改，务必保留并核对原许可证头。
-
 ---
 
 ## 致谢 / Credits
