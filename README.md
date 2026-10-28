@@ -16,14 +16,14 @@
 | Wi-Fi | PCIe | `pci14c3,7922` / `pci14c3,0616` / `pci0b48,7922` |
 | Bluetooth | USB | `0489:e0e2`（VID `0x0489` / PID `0xe0e2`） |
 
-- Wi-Fi 同时支持“普通接口”与“原生菜单”两种模式，二者**只能加载其中一个**。
+- Wi-Fi 同时支持“普通接口”与“原生菜单”两种模式。(普通接口已移除）
 - Bluetooth 需要配合外置 [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM) 与 [Lilu](https://github.com/acidanthera/Lilu) 使用。
 
 ---
 
 ## 功能状态 / Feature Status
 
-### Wi-Fi（MT7922 / MT7922Native）
+### Wi-Fi（MT7922）
 - ✅ PCIe 初始化、WFDMA、固件加载
 - ✅ 2.4 GHz / 5 GHz 扫描与连接
 - ✅ WPA2-PSK / CCMP
@@ -42,7 +42,7 @@
 
 ### 依赖
 
-- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（所有 target 都需要）
+- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（可能需要，仅在不能正常使用下尝试）
 - 蓝牙额外需要 `Lilu.kext` + `BlueToolFixup.kext`
 
 ---
@@ -50,7 +50,6 @@
 ## 致谢 / Credits
 
 - Linux `mt76` / `mt7921` 驱动（MediaTek、Lorenzo Bianconi、Felix Fietkau 等）
-- [acidanthera](https://github.com/acidanthera)：Lilu、BrcmPatchRAM / BlueToolFixup、MacKernelSDK
-- [OpenIntelWireless/itlwm](https://github.com/OpenIntelWireless/itlwm)：原生 Wi-Fi 接口参考
-- Apple IONetworkingFamily / IO80211Family（Apple Public Source License）
+- [acidanthera](https://github.com/acidanthera)：Lilu、BrcmPatchRAM / BlueToolFixup、MacKernelSDK 无相关内容引用，仅做系统修补
+
 
