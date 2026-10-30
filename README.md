@@ -61,3 +61,8 @@ WIFI
 ps：你可能无法在使用release/仓库中的驱动中看到awdl项目，awdl正在测试中
 纯skywalk接入apple原生射频管理，并未使用intelwifi入网渠道，目前，驱动反响良好
 关于版本支持，目前macos26为主线，os13为过去支持版本，os13下同样使用skywalk管理射频，但是接入io80211family（好像是），本项目的目的是实现和AppleBCMWlanCore系列完全一致的架构和驱动级别，以此实现纯原生wifi管理。其他详细细节请进群了解，我想不出来了完善隔空投送去了，目前扫描已成功。
+
+## 问题自我解决指南：
+
+1.我在系统信息里面看到全是<redact>什么的怎么办？肯定是你驱动没做好！！？
+解：shkywalkwifi信息去敏，自带ssid隐藏，如果你无惧风险继续查看，那么在boot-args加入 corewifi_redact_logs=0；ps：这不是我想加的，为什么是这个找Apple问去。
