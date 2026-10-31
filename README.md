@@ -2,7 +2,7 @@
 仓库管理员 qiqco，软件撰写者 Angus666888，驱动测试QQ群708393964
 ## 关于panic
 现在在开机（macos）下正常加载网卡后，直接替换efi本驱动，直接使用！热重启！进入macos时候有概率panic（约1/5-1/20几率），暂不考虑修复，推测可能和固件加载卸载有关。解决方法：完成一次断电开机就可以了！
-
+##
 **English:** Experimental macOS kernel extensions for the MediaTek MT7922 Wi-Fi/Bluetooth combo, targeting Hackintosh / macOS 13+ on x86_64 (Apple Silicon support is not implemented).
 
 **中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 x86_64 的 macOS 13和26。
