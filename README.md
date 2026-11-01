@@ -45,7 +45,7 @@
 ### 依赖
 WIFI
 - 直接加载使用即可，无需任何修补，纯原生
-- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（可能需要，理论上不需要，仅在不能正常使用下尝试）
+- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（不需要，仅在不能正常使用下尝试）
 蓝牙
 - 蓝牙额外需要 `Lilu.kext` + `BlueToolFixup.kext`
 
