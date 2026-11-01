@@ -9,6 +9,7 @@
 
 ！！！！！github提供版本仅确保支持26.5以上，其他版本需自行尝试，os13驱动可以至q群询问！！！！！
 26最新系统一定会支持，26较旧系统不会去支持
+
 关于我们的特色，在文末看看-jump to the end of file to view the overall project
 
 > ** 免责声明 / Disclaimer**
