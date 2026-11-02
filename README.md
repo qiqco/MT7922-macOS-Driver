@@ -8,7 +8,7 @@
 **中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 x86_64 的 macOS 13和26。
 
 ！！！！！github提供版本仅确保支持26.5以上，其他版本需自行尝试，os13驱动可以至q群询问！！！！！
-26最新系统一定会支持，26较旧系统不会去支持
+26最新系统一定会支持，26较旧系统不会去支持，可能可以使用，编译sdk使用26.5
 
 关于我们的特色，在文末看看-jump to the end of file to view the overall project
 
@@ -70,3 +70,5 @@ ps：你可能无法在使用release/仓库中的驱动中看到awdl项目，awd
 
 1.我在系统信息里面看到全是<redact>什么的怎么办？肯定是你驱动没做好！！？
 解：shkywalkwifi信息去敏，自带ssid隐藏，如果你无惧风险继续查看，那么在boot-args加入 corewifi_redact_logs=0；ps：这不是我想加的，为什么是这个找Apple问去。
+2.我加载了驱动，但是发现不能用，ioregistryexplorer显示没有任何和mt7922相关项目挂载。
+：新款电脑，尤其是初始网卡支持6G频段的电脑通常acpi表会通过sar关闭6G电源，但是sar有多种配置，且就算是某些大厂的配置也乱七八糟的，不一定sar配置被支持，如果想获得纯原生体验，你可以提交issue，如果单纯想要解锁全部功能和日用/懒得提交，你可以在infoplist自行修改MT7922IgnorePlatformSAR项目，忽略平台acpi配置一般可以解决。
