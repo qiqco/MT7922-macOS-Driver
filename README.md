@@ -11,6 +11,7 @@
 26最新系统一定会支持，26较旧系统不会去支持，可能可以使用，编译sdk使用26.5
 
 关于我们的特色，在文末看看-jump to the end of file to view the overall project
+
 ##更多的志同道合的朋友的项目集
 --https://github.com/Xelon233/Vela-X
 ##
@@ -64,9 +65,12 @@ WIFI
 - 开发工程中遇到一些问题，在intelBTpatch项目中找到灵感，所以也在此处致谢，无相关代码引用，使用。
 
 ## 关于这个驱动
+
 <img width="508" height="376" alt="image" src="https://github.com/user-attachments/assets/805d77a8-5f70-4249-bfd4-28a5ef6b23d9" />
 ps：你可能无法在使用release/仓库中的驱动中看到awdl项目，awdl正在测试中
+
 纯skywalk接入apple原生射频管理，并未使用intelwifi入网渠道，目前，驱动反响良好
+
 关于版本支持，目前macos26为主线，os13为过去支持版本，os13下同样使用skywalk管理射频，但是接入io80211family（好像是），本项目的目的是实现和AppleBCMWlanCore系列完全一致的架构和驱动级别，以此实现纯原生wifi管理。其他详细细节请进群了解，我想不出来了完善隔空投送去了，目前扫描已成功。
 
 ## 问题自我解决指南：
