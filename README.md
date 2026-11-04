@@ -1,8 +1,10 @@
 # MT7922 macOS Driver (Hackintosh)
 仓库管理员 qiqco，软件撰写者 Angus666888，驱动测试QQ群708393964，第330版wifi测试，v1.2.64
+
 ## 关于panic
 现在在开机（macos）下正常加载网卡后，直接替换efi本驱动，直接使用！热重启！进入macos时候有概率panic（约1/5-1/20几率），暂不考虑修复，推测可能和固件加载卸载有关。解决方法：完成一次断电开机就可以了！
 ##
+
 **English:** Experimental macOS kernel extensions for the MediaTek MT7922 Wi-Fi/Bluetooth combo, targeting Hackintosh / macOS 13，26.5+ on x86_64 (Apple Silicon support is not implemented).
 
 **中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 x86_64 的 macOS 13和26。
@@ -13,8 +15,10 @@
 关于我们的特色，在文末看看-jump to the end of file to view the overall project
 
 ##更多的志同道合的朋友的项目集
+
 --https://github.com/Xelon233/Vela-X
 ##
+
 > ** 免责声明 / Disclaimer**
 > 本项目为实验性驱动，按原样提供，不提供任何形式的担保。内核扩展可能引发内核 panic、数据丢失或硬件异常。请仅在可接受风险的测试设备上使用，并确保能恢复系统。
 
