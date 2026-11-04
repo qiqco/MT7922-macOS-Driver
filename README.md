@@ -11,7 +11,9 @@
 26最新系统一定会支持，26较旧系统不会去支持，可能可以使用，编译sdk使用26.5
 
 关于我们的特色，在文末看看-jump to the end of file to view the overall project
-
+##更多的志同道合的朋友的项目集
+--https://github.com/Xelon233/Vela-X
+##
 > ** 免责声明 / Disclaimer**
 > 本项目为实验性驱动，按原样提供，不提供任何形式的担保。内核扩展可能引发内核 panic、数据丢失或硬件异常。请仅在可接受风险的测试设备上使用，并确保能恢复系统。
 
