@@ -1,8 +1,12 @@
 # MT7922 macOS Driver (Hackintosh)
 仓库管理员 qiqco，软件撰写者 Angus666888，驱动测试QQ群708393964，第330版wifi测试，v1.2.64
+非常感谢Xelon233送来token
+隔空投送已经支持
 
 ## 关于panic
-现在在开机（macos）下正常加载网卡后，直接替换efi本驱动，直接使用！热重启！进入macos时候有概率panic（约1/5-1/20几率），暂不考虑修复，推测可能和固件加载卸载有关。解决方法：完成一次断电开机就可以了！
+现在在开机（macos）下正常加载网卡后，直接替换efi本驱动，直接使用！热重启！
+下列问题已经修复
+忽略：进入macos时候有概率panic（约1/5-1/20几率），暂不考虑修复，推测可能和固件加载卸载有关。解决方法：完成一次断电开机就可以了！
 ##
 
 **English:** Experimental macOS kernel extensions for the MediaTek MT7922 Wi-Fi/Bluetooth combo, targeting Hackintosh / macOS 13，26.5+ on x86_64 (Apple Silicon support is not implemented).
@@ -40,7 +44,7 @@
 
 ### Wi-Fi（MT7922 OS26）
 目前除了6G明确不能连接，可能可以扫描，暂无明显问题。
-关于性能：制作者，我，仅流量环境，最大5G80mhz，可能存在速率上限，暂时无法测试，暂时不修复，修复隔空投送中。
+关于性能：制作者，我，仅流量环境，最大5G80mhz，可能存在速率上限，暂时无法测试，暂时不修复，隔空投送已修复。
 
 ### 蓝牙（MT7922Bluetooth）
 - USB 固件上传与交接
