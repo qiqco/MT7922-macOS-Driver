@@ -1,7 +1,7 @@
 # MT7922 macOS Driver (Hackintosh)
 仓库管理员 qiqco，软件撰写者 Angus666888，驱动测试QQ群708393964，
 
-～～第330版wifi测试，v1.2.64～～
+~~第330版wifi测试，v1.2.64~~
 
 非常感谢Xelon233送来token
 
@@ -71,11 +71,11 @@
 ### 依赖
 WIFI
 - 直接加载使用即可，无需任何修补，纯原生
-- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（不需要，仅在不能正常使用下尝试）
+- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（不需要，仅在不能正常使用下尝试）~~
 蓝牙
 - 蓝牙额外需要 `Lilu.kext` + `BlueToolFixup.kext`
-- [KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（可能需要，仅在不能正常使用下尝试）
-- 加载顺序kextlogkit/bluetoolfixup（同级）先加载，后本驱动
+- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（可能需要，仅在不能正常使用下尝试）~~
+- 加载顺序bluetoolfixup（同级）先加载，后本驱动
 ---
 
 ## WIFI部分致谢 / Credits
