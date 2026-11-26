@@ -1,45 +1,38 @@
 # MT7922 macOS Driver (Hackintosh)
-仓库管理员 qiqco，软件撰写者 Angus666888，驱动测试QQ群708393964，
 
-~~第330版wifi测试，v1.2.64~~
+> **仓库管理员：** qiqco ｜ **作者：** Angus666888 ｜ **驱动测试 QQ 群：** `708393964`  
+> 非常感谢 **Xelon233** 送来 Token 支持！
 
-非常感谢Xelon233送来token
+**English:** Experimental macOS kernel extensions for the MediaTek MT7922 Wi-Fi/Bluetooth combo, targeting Hackintosh / macOS 13 and 26.5+ on `x86_64` (Apple Silicon support is not implemented).
 
-隔空投送已经支持，由于最近更新频繁，在网站可能不能获得最新版本，作者忙于更新，最后入群了解。
+**中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 `x86_64` 架构的 macOS 13 与 macOS 26。
 
-~~quic建联小于0.000s~~
-~~tls1.3握手0.171s~~
-~~往返RTT0.007s~~
-~~无重连，无乱序~~
-~~awdl0实测速率，最低0.6MB/s，最大1.7MB/s，中位数1.4MB/s~~
+> [!IMPORTANT]
+> - GitHub 提供的版本**仅确保支持 macOS 26.5 及以上**（编译 SDK 使用 26.5），26 较旧版本不做专门适配（可自行尝试），后续会持续跟进 macOS 26 最新系统。
+> - macOS 13 驱动暂不再维护，如需获取可进 QQ 群询问。
+> - 由于近期更新频繁，GitHub 仓库可能不是最新版本，建议加群获取最新测试版。
 
-11/26
+> [!WARNING]
+> **免责声明 / Disclaimer**  
+> 本项目为实验性驱动，按原样提供，不提供任何形式的担保。内核扩展可能引发内核 Panic、数据丢失或硬件异常。请仅在可接受风险的测试设备上使用，并确保具备恢复系统的手段。
 
-无阻塞隔空投送，可以保持正常网络连接并隔空投送
+---
 
+## 最新动态 / Updates
 
-## 关于panic
-现在在开机（macos）下正常加载网卡后，直接替换efi本驱动，直接使用！热重启！
-下列问题已经修复
-忽略：进入macos时候有概率panic（约1/5-1/20几率），暂不考虑修复，推测可能和固件加载卸载有关。解决方法：完成一次断电开机就可以了！
-##
+### 11/26 更新
+- **无阻塞隔空投送（AirDrop）：** 已支持在保持正常网络连接的同时使用隔空投送。
+- **关于 Panic（已修复）：** 现在在 macOS 下正常加载网卡后，可直接替换 EFI 中的本驱动并**热重启**生效。
+  - ~~旧版已知问题（已修复，可忽略）：进入 macOS 时有约 1/5 ~ 1/20 概率发生 Panic，推测与固件加载卸载有关，此前需断电重启解决。~~
 
-**English:** Experimental macOS kernel extensions for the MediaTek MT7922 Wi-Fi/Bluetooth combo, targeting Hackintosh / macOS 13，26.5+ on x86_64 (Apple Silicon support is not implemented).
+<details>
+<summary>历史测试记录（点击展开）</summary>
 
-**中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 x86_64 的 macOS 13和26。
+- ~~第 330 版 Wi-Fi 测试，`v1.2.64`~~
+- ~~QUIC 建联 < 0.000s / TLS 1.3 握手 0.171s / 往返 RTT 0.007s，无重连、无乱序~~
+- ~~`awdl0` 实测速率：最低 0.6 MB/s，最大 1.7 MB/s，中位数 1.4 MB/s~~
 
-！！！！！github提供版本仅确保支持26.5以上，其他版本需自行尝试，os13驱动可以至q群询问！！！！！
-26最新系统一定会支持，26较旧系统不会去支持，可能可以使用，编译sdk使用26.5
-
-关于我们的特色，在文末看看-jump to the end of file to view the overall project
-
-##更多的志同道合的朋友的项目集
-
---https://github.com/Xelon233/Vela-X
-##
-
-> ** 免责声明 / Disclaimer**
-> 本项目为实验性驱动，按原样提供，不提供任何形式的担保。内核扩展可能引发内核 panic、数据丢失或硬件异常。请仅在可接受风险的测试设备上使用，并确保能恢复系统。
+</details>
 
 ---
 
@@ -50,65 +43,54 @@
 | Wi-Fi | PCIe | `pci14c3,7922` / `pci14c3,0616` / `pci0b48,7922` |
 | Bluetooth | USB | `0489:e0e2`（VID `0x0489` / PID `0xe0e2`） |
 
-- Wi-Fi 同时支持“普通接口”与“原生菜单”两种模式。(普通接口已移除）【os13】，当前研发主线在MACOS26，13版本有可运行驱动，但是暂时不再维护
-- Bluetooth 需要配合外置 [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM) 与 [Lilu](https://github.com/acidanthera/Lilu) 使用（理论支持所有（至少10.13）系统，13和26下蓝牙已经测试无误）。
+- **Wi-Fi：** 当前研发主线为 macOS 26（原生菜单模式）。macOS 13 曾支持普通接口与原生菜单，目前已移除普通接口且暂停维护。
+- **Bluetooth：** 需配合外置 [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM) 与 [Lilu](https://github.com/acidanthera/Lilu) 使用。理论支持 macOS 10.13 及以上所有系统，macOS 13 和 26 下已测试无误。
 
 ---
 
 ## 功能状态 / Feature Status
 
-### Wi-Fi（MT7922 OS26）
-目前除了6G明确不能连接，可能可以扫描，暂无明显问题。
-关于性能：制作者，我，仅流量环境，最大5G80mhz，可能存在速率上限，暂时无法测试，暂时不修复，隔空投送已修复。
+### Wi-Fi（MT7922 macOS 26）
+- 除 **6GHz 频段**明确无法连接（可能可扫描）外，目前暂无明显问题。
+- **隔空投送（AirDrop）：** 已修复并支持无阻塞传输。
+- **关于性能：** 作者目前仅在流量环境下测试，最大环境为 5GHz 80MHz，可能存在速率上限，暂无法测试与修复。
 
 ### 蓝牙（MT7922Bluetooth）
-- USB 固件上传与交接
-- 设备限定的 HCI 随机地址补丁
-- 需要外置 BlueToolFixup + Lilu 才能被系统正确识别
+- 支持 USB 固件上传与交接。
+- 内置设备限定的 HCI 随机地址补丁。
+- 需配合外置 `BlueToolFixup` + `Lilu` 才能被系统正确识别。
+
+---
 
 ## 加载与使用 / Usage
 
-### 依赖
-WIFI
-- 直接加载使用即可，无需任何修补，纯原生
-- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（不需要，仅在不能正常使用下尝试）~~
-蓝牙
-- 蓝牙额外需要 `Lilu.kext` + `BlueToolFixup.kext`
-- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（可能需要，仅在不能正常使用下尝试）~~
-- 加载顺序bluetoolfixup（同级）先加载，后本驱动
+### Wi-Fi
+- 直接加载使用即可，无需任何修补，纯原生接入。
+- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（不需要，仅在无法正常使用时尝试）~~
+
+### 蓝牙
+- 必需依赖：`Lilu.kext` + `BlueToolFixup.kext`
+- **加载顺序：** `Lilu.kext` → `BlueToolFixup.kext` → 本驱动
+- ~~[KEXTLogKit.kext](https://github.com/acidanthera/KEXTLogKit)（一般不需要，仅在无法正常使用时尝试）~~
+
 ---
 
-## WIFI部分致谢 / Credits
-- Linux mt76项目
-- （注：本项目独立开发，与市面上现有所有MT7922均无参考关系，唯一参考为mt76，为确保开发者更新兴致暂时不开源源码！！）
+## 关于这个驱动 / About
 
-  
-## 蓝牙部分致谢 / Credits 
-- [acidanthera](https://github.com/acidanthera)：Lilu、BrcmPatchRAM / BlueToolFixup、MacKernelSDK 无相关内容引用，仅做系统修补，但为高版本使用必备，特此致谢
-- 开发工程中遇到一些问题，在intelBTpatch项目中找到灵感，所以也在此处致谢，无相关代码引用，使用。
+<img width="508" height="376" alt="驱动架构示意" src="https://github.com/user-attachments/assets/805d77a8-5f70-4249-bfd4-28a5ef6b23d9" />
 
-## 关于这个驱动
+> 注：Release 或仓库中的旧版驱动可能暂未显示 `awdl0` 项目，AWDL 功能正在持续完善中。
 
-<img width="508" height="376" alt="image" src="https://github.com/user-attachments/assets/805d77a8-5f70-4249-bfd4-28a5ef6b23d9" />
-ps：你可能无法在使用release/仓库中的驱动中看到awdl项目，awdl正在测试中
+本项目采用**纯 Skywalk 接入 Apple 原生射频管理**，未使用 Intel Wi-Fi 入网渠道，目前反馈良好。
 
-纯skywalk接入apple原生射频管理，并未使用intelwifi入网渠道，目前，驱动反响良好
+- **版本架构：** 目前以 macOS 26 为主线；macOS 13 同样使用 Skywalk 管理射频，但接入 `IO80211Family`。
+- **项目目标：** 实现与 `AppleBCMWlanCore` 系列完全一致的架构和驱动级别，达成纯原生 Wi-Fi 管理。更多细节欢迎进群交流。
 
-关于版本支持，目前macos26为主线，os13为过去支持版本，os13下同样使用skywalk管理射频，但是接入io80211family（好像是），本项目的目的是实现和AppleBCMWlanCore系列完全一致的架构和驱动级别，以此实现纯原生wifi管理。其他详细细节请进群了解，我想不出来了完善隔空投送去了，目前扫描已成功。
+---
 
-## 问题自我解决指南：
+## 常见问题与自助排查 / FAQ
 
-1.我在系统信息里面看到全是<redact>什么的怎么办？肯定是你驱动没做好！！？
-解：shkywalkwifi信息去敏，自带ssid隐藏，如果你无惧风险继续查看，那么在boot-args加入 corewifi_redact_logs=0；ps：这不是我想加的，为什么是这个找Apple问去。
-
-2.我加载了驱动，但是发现不能用，ioregistryexplorer显示没有任何和mt7922相关项目挂载。
-：新款电脑，尤其是初始网卡支持6G频段的电脑通常acpi表会通过sar关闭6G电源，但是sar有多种配置，且就算是某些大厂的配置也乱七八糟的，不一定sar配置被支持，如果想获得纯原生体验，你可以提交issue，如果单纯想要解锁全部功能和日用/懒得提交，你可以在infoplist自行修改MT7922IgnorePlatformSAR项目，忽略平台acpi配置一般可以解决。
-
-4.如果你的电脑出现反复重启无法打开wifi：
-：去win一下，关机在进macOS，暂不清楚成因，如有突破或者有找到成因者欢迎在issue留言
-
-3.关于开源
-：如果你愿意补齐30亿token（6000美刀）+1200元dpsk的花费，我可以把源码交由于你。
-
-5.蓝牙
-：目前已知有部分版本的蓝牙因为vidpid被厂家定义了一下，蓝牙驱动年久失修，存在两个vidpid校验，仅更改info无法启动（当然，驱动是通用的）。如果你有问题，进群，人多的话可以提前修。
+### 1. 系统信息里全是 `<redact>` 怎么办？是不是驱动没做好？
+这是因为 Skywalk Wi-Fi 自带信息脱敏与 SSID 隐藏机制。如果你不介意暴露日志信息，可以在 `boot-args` 中加入：
+```text
+corewifi_redact_logs=0
