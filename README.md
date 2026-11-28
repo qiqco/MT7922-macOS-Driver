@@ -9,6 +9,7 @@
 
 超级重要
 本驱动蓝牙分离，蓝牙库见：https://github.com/angus666888/MT7922Bluetooth
+下述蓝牙均为旧版本，不做使用
 
 > [!IMPORTANT]
 > - GitHub 提供的版本**仅确保支持 macOS 26.5 及以上**（编译 SDK 使用 26.5），26 较旧版本不做专门适配（可自行尝试），后续会持续跟进 macOS 26 最新系统。
