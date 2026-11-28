@@ -7,6 +7,9 @@
 
 **中文：** 适用于 macOS（Hackintosh）的 MediaTek MT7922 Wi-Fi / 蓝牙实验性内核驱动，目标平台为 `x86_64` 架构的 macOS 13 与 macOS 26。
 
+超级重要
+本驱动蓝牙分离，蓝牙库见：https://github.com/angus666888/MT7922Bluetooth
+
 > [!IMPORTANT]
 > - GitHub 提供的版本**仅确保支持 macOS 26.5 及以上**（编译 SDK 使用 26.5），26 较旧版本不做专门适配（可自行尝试），后续会持续跟进 macOS 26 最新系统。
 > - macOS 13 驱动暂不再维护，如需获取可进 QQ 群询问。
